@@ -1,0 +1,44 @@
+body {
+  padding: 30px 280px;
+}
+.card-img-top {
+  height: 200px;
+}
+
+.celcius {
+  text-decoration: none;
+  font-size: smaller;
+}
+
+.fahrenheit {
+  text-decoration: none;
+  font-size: smaller;
+}
+.card-title-city {
+  font-family: "Oleo Script Swash Caps", cursive;
+  font-size: 70px;
+}
+.card-title {
+  font-style: italic;
+  font-size: 18px;
+}
+.col-6 {
+  text-align: center;
+}
+.card-text-city {
+  font-family: "Lato", sans-serif;
+}
+.today {
+  font-size: 100px;
+}
+.degree {
+  font-size: 50px;
+}
+input {
+  display: inline;
+}
+h5 {
+  font-family: "Lato", sans-serif;
+  text-align: justify;
+  font-style: bold;
+}
