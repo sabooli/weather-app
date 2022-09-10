@@ -42,3 +42,13 @@ h5 {
   text-align: justify;
   font-style: bold;
 }
+.footnote {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 0  0 0 15px;
+}
+.name {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+}
