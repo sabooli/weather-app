@@ -20,29 +20,32 @@ let month = months[now.getMonth()];
 let todayDate = document.querySelector("#date");
 todayDate.innerHTML = `${day}, ${date} ${month}`;
 
+function search(cityy) {
+  let apiKey = "4b0b2f517c80e7ab3164919ae7be38b7";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityy}&units=metric`;
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
+}
+
+function showTemp(tempo) {
+  console.log(tempo.data);
+  let temperatureElement = document.querySelector("#just-now");
+  temperatureElement.innerHTML = `${Math.round(tempo.data.main.temp)}`;
+  let maxElement = document.querySelector("#highest");
+  maxElement.innerHTML = `${Math.round(tempo.data.main.temp_max)}`;
+  let minElement = document.querySelector("#lowest");
+  minElement.innerHTML = `${Math.round(tempo.data.main.temp_min)}`;
+  let precipitationElement = document.querySelector("#prec");
+  precipitationElement.innerHTML = `${tempo.data.main.humidity}`;
+  let windElement = document.querySelector("#sooz");
+  windElement.innerHTML = `${Math.round(tempo.data.wind.speed)}`;
+}
 function enterNew(event) {
   event.preventDefault();
   let currentCity = document.querySelector("#city-input");
   let heading = document.querySelector("h1");
   heading.innerHTML = currentCity.value;
   let cityy = currentCity.value;
-
-  function showTemp(tempo) {
-    console.log(tempo.data);
-    let temperatureElement = document.querySelector("#just-now");
-    temperatureElement.innerHTML = `${Math.round(tempo.data.main.temp)}`;
-    let maxElement = document.querySelector("#highest");
-    maxElement.innerHTML = `${Math.round(tempo.data.main.temp_max)}`;
-    let minElement = document.querySelector("#lowest");
-    minElement.innerHTML = `${Math.round(tempo.data.main.temp_min)}`;
-    let precipitationElement = document.querySelector("#prec");
-    precipitationElement.innerHTML = `${tempo.data.main.humidity}`;
-    let windElement = document.querySelector("#sooz");
-    windElement.innerHTML = `${Math.round(tempo.data.wind.speed)}`;
-  }
-  let apiKey = "4b0b2f517c80e7ab3164919ae7be38b7";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityy}&units=metric`;
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
+  search(cityy);
 }
 
 let submit = document.querySelector("#button-addon2");
@@ -75,3 +78,5 @@ function displayTemp(tempi) {
 
 let button = document.querySelector("#button-addon3");
 button.addEventListener("click", getCurrentLocation);
+
+search("Paris");
