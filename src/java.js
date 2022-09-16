@@ -38,6 +38,12 @@ function showTemp(tempo) {
   precipitationElement.innerHTML = `${tempo.data.main.humidity}`;
   let windElement = document.querySelector("#sooz");
   windElement.innerHTML = `${Math.round(tempo.data.wind.speed)}`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${tempo.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", tempo.data.weather[0].main);
 }
 function enterNew(event) {
   event.preventDefault();
@@ -74,12 +80,6 @@ function displayTemp(tempi) {
   humidityElement.innerHTML = `${tempi.data.main.humidity}`;
   let winddElement = document.querySelector("#sooz");
   winddElement.innerHTML = `${Math.round(tempi.data.wind.speed)}`;
-  let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${tempi.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", tempi.data.weather[0].main);
 }
 
 let button = document.querySelector("#button-addon3");
