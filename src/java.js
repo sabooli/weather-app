@@ -74,6 +74,12 @@ function displayTemp(tempi) {
   humidityElement.innerHTML = `${tempi.data.main.humidity}`;
   let winddElement = document.querySelector("#sooz");
   winddElement.innerHTML = `${Math.round(tempi.data.wind.speed)}`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${tempi.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", tempi.data.weather[0].main);
 }
 
 let button = document.querySelector("#button-addon3");
