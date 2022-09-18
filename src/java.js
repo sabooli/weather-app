@@ -90,6 +90,8 @@ button.addEventListener("click", getCurrentLocation);
 
 function displayCelciusTemp(conversion) {
   conversion.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celciusLink.classList.add("active");
   let temperatureElement = document.querySelector("#just-now");
   temperatureElement.innerHTML = Math.round(celciusTemperature);
 }
@@ -99,6 +101,8 @@ celciusLink.addEventListener("click", displayCelciusTemp);
 
 function displayFahrenheitTemp(convert) {
   convert.preventDefault();
+  fahrenheitLink.classList.add("active");
+  celciusLink.classList.remove("active");
   let temperatureElement = document.querySelector("#just-now");
   let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
