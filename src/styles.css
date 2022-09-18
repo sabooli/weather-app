@@ -6,6 +6,10 @@ body {
   background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/046/484/original/photo_2022-09-18_22.jpg?1663526799);
 }
 
+h1 {
+  text-transform: capitalize;
+}
+
 li {
   font-style: italic;
   list-style: none;
