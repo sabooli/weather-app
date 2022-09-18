@@ -28,6 +28,7 @@ function search(cityy) {
 
 function showTemp(tempo) {
   console.log(tempo.data);
+  celciusTemperature = tempo.data.main.temp;
   let temperatureElement = document.querySelector("#just-now");
   temperatureElement.innerHTML = `${Math.round(tempo.data.main.temp)}`;
   let maxElement = document.querySelector("#highest");
@@ -38,6 +39,8 @@ function showTemp(tempo) {
   precipitationElement.innerHTML = `${tempo.data.main.humidity}`;
   let windElement = document.querySelector("#sooz");
   windElement.innerHTML = `${Math.round(tempo.data.wind.speed)}`;
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = `${tempo.data.weather[0].description}`;
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -84,5 +87,24 @@ function displayTemp(tempi) {
 
 let button = document.querySelector("#button-addon3");
 button.addEventListener("click", getCurrentLocation);
+
+function displayCelciusTemp(conversion) {
+  conversion.preventDefault();
+  let temperatureElement = document.querySelector("#just-now");
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+}
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", displayCelciusTemp);
+
+function displayFahrenheitTemp(convert) {
+  convert.preventDefault();
+  let temperatureElement = document.querySelector("#just-now");
+  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 search("Paris");
