@@ -3,7 +3,7 @@ body {
 }
 
 .back {
-  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/046/482/original/photo_2022-09-18_22-58-59.jpg?1663526019);
+  background-image: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/046/484/original/photo_2022-09-18_22.jpg?1663526799);
 }
 
 li {
@@ -14,7 +14,8 @@ li {
 }
 
 .weather {
-  background-color: #3fccc7;
+  background-color: #d0aa5b;
+  opacity: 90%;
   margin-top: 10px;
   padding: 20px;
   border: 1px solid #dadde1;
@@ -61,7 +62,8 @@ div {
   text-align: center;
 }
 .card .h-100 {
-  background-color: #3fccc7;
+  background-color: #d0aa5b;
+  opacity: 90%;
 }
 .card-text-city {
   font-family: "Lato", sans-serif;
