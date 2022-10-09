@@ -19,7 +19,7 @@ li {
 }
 
 .weather {
-  background-color: #d0aa5b;
+  background-color: #b4c6d2;
   opacity: 90%;
   margin-top: 10px;
   padding: 20px;
@@ -103,7 +103,7 @@ input {
   border-radius: 4px;
   padding: 5px;
   margin: 15px;
-  background-color: #d0aa5b;
+  background-color: #b4c6d2;
   opacity: 90%;
 }
 .weather-forecast-min {
