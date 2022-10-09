@@ -57,17 +57,7 @@ div {
   font-family: "Oleo Script Swash Caps", cursive;
   font-size: 70px;
 }
-.card-title {
-  font-style: italic;
-  font-size: 18px;
-}
-.col-6 {
-  text-align: center;
-}
-.card .h-100 {
-  background-color: #d0aa5b;
-  opacity: 90%;
-}
+
 .card-text-city {
   font-family: "Lato", sans-serif;
 }
@@ -79,11 +69,6 @@ div {
 }
 input {
   display: inline;
-}
-h5 {
-  font-family: arial, sans-serif;
-  text-align: justify;
-  font-style: bold;
 }
 .footnote {
   font-family: "Lato", sans-serif;
@@ -98,4 +83,32 @@ h5 {
 .degree .active {
   color: #212529;
   cursor: default;
+}
+.weather-forecast-date {
+  text-align: center;
+  font-size: 16px;
+}
+.weather-forecast-max {
+  text-align: center;
+  font-size: 16px;
+}
+.weather-forecast-min {
+  text-align: center;
+  font-size: 16px;
+}
+.weather-forecast {
+  text-align: center;
+  width: 155%;
+  position: relative;
+}
+.col-1 {
+  border: 1px solid #dadde1;
+  border-radius: 4px;
+  padding: 5px;
+  margin: 15px;
+  background-color: #d0aa5b;
+  opacity: 90%;
+}
+.weather-forecast-min {
+  opacity: 70%;
 }
