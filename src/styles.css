@@ -49,10 +49,6 @@ div {
   text-transform: capitalize;
 }
 
-.fahrenheit {
-  text-decoration: none;
-  font-size: smaller;
-}
 .card-title-city {
   font-family: "Oleo Script Swash Caps", cursive;
   font-size: 70px;
