@@ -67,6 +67,8 @@ function search(cityy) {
 }
 
 function showTemp(tempo) {
+  let heading = document.querySelector("h1");
+  heading.innerHTML = `${tempo.data.name}`;
   celciusTemperature = tempo.data.main.temp;
   let temperatureElement = document.querySelector("#just-now");
   temperatureElement.innerHTML = `${Math.round(tempo.data.main.temp)}`;
@@ -106,22 +108,7 @@ function getCurrentLocation() {
 function showPosition(position) {
   let apiKey = "4b0b2f517c80e7ab3164919ae7be38b7";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`;
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(displayTemp);
-}
-
-function displayTemp(tempi) {
-  let heading = document.querySelector("h1");
-  heading.innerHTML = `${tempi.data.name}`;
-  let temperatureElementt = document.querySelector("#just-now");
-  temperatureElementt.innerHTML = `${Math.round(tempi.data.main.temp)}`;
-  let maxiElement = document.querySelector("#highest");
-  maxiElement.innerHTML = `${Math.round(tempi.data.main.temp_max)}`;
-  let miniElement = document.querySelector("#lowest");
-  miniElement.innerHTML = `${Math.round(tempi.data.main.temp_min)}`;
-  let humidityElement = document.querySelector("#prec");
-  humidityElement.innerHTML = `${tempi.data.main.humidity}`;
-  let winddElement = document.querySelector("#sooz");
-  winddElement.innerHTML = `${Math.round(tempi.data.wind.speed)}`;
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
 }
 
 let button = document.querySelector("#button-addon3");
